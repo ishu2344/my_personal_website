@@ -30,9 +30,6 @@
             opacity: 1;
             transition: opacity 0.5s ease-in-out;
         }
-        .content-card {
-            background-color: rgba(30, 41, 59, 0.8); /* Slate-800 with transparency */
-        }
         /* Animation for the text */
         @keyframes fadeInMoveUp {
             from {
@@ -128,16 +125,16 @@
     </aside>
 
     <!-- Main Content Area -->
-    <main class="w-full p-8 flex flex-col">
+    <main class="w-full flex-1 flex flex-col items-center justify-center p-4 md:p-8">
 
         <!-- Home Section -->
         <section id="home" class="w-full max-w-4xl flex-col space-y-10 min-h-screen">
-            <div class="p-8 w-full flex flex-col items-start text-left">
-                <div class="w-32 h-32 md:w-40 md:h-40 rounded-full flex items-center justify-center mb-6 shadow-xl glitter-logo">
-                    <h1 class="silver-lines-logo text-shadow-lg z-10">IZ</h1>
+            <div class="p-4 md:p-8 w-full flex flex-col items-start text-left">
+                <div class="w-24 h-24 md:w-32 md:h-32 rounded-full flex items-center justify-center mb-4 md:mb-6 shadow-xl glitter-logo">
+                    <h1 class="silver-lines-logo text-shadow-lg z-10 text-4xl md:text-5xl">IZ</h1>
                 </div>
-                <h1 class="text-4xl md:text-5xl font-extrabold text-white text-shadow-lg animate-on-show text-3xl sm:text-4xl lg:text-5xl">Welcome to My Website!</h1>
-                <p class="text-xl text-gray-300 mt-4 max-w-prose text-shadow-lg animate-on-show text-base sm:text-lg lg:text-xl">
+                <h1 class="text-3xl md:text-5xl font-extrabold text-white text-shadow-lg animate-on-show">Welcome to My Website!</h1>
+                <p class="text-base md:text-xl text-gray-300 mt-2 md:mt-4 max-w-prose text-shadow-lg animate-on-show">
                     This is a dynamic and modern website designed to showcase my skills and projects. Explore the different sections to learn more about me.
                 </p>
             </div>
@@ -145,12 +142,12 @@
         
         <!-- About Me Section -->
         <section id="about" class="w-full max-w-4xl hidden-section flex-col space-y-10 min-h-screen">
-            <div class="p-8 w-full flex flex-col items-start text-left">
-                <div class="w-32 h-32 md:w-40 md:h-40 rounded-full flex items-center justify-center mb-6 shadow-xl glitter-logo">
-                    <h1 class="silver-lines-logo text-shadow-lg z-10">IZ</h1>
+            <div class="p-4 md:p-8 w-full flex flex-col items-start text-left">
+                <div class="w-24 h-24 md:w-32 md:h-32 rounded-full flex items-center justify-center mb-4 md:mb-6 shadow-xl glitter-logo">
+                    <h1 class="silver-lines-logo text-shadow-lg z-10 text-4xl md:text-5xl">IZ</h1>
                 </div>
-                <h2 class="text-4xl font-bold mb-4 text-white text-shadow-lg animate-on-show text-3xl sm:text-4xl lg:text-5xl">About Me</h2>
-                <p class="text-xl text-white text-shadow-lg animate-on-show text-base sm:text-lg lg:text-xl">
+                <h2 class="text-3xl md:text-4xl font-bold mb-2 md:mb-4 text-white text-shadow-lg animate-on-show">About Me</h2>
+                <p class="text-base md:text-xl text-white text-shadow-lg animate-on-show">
                     Hello and welcome! My name is Ishrat Zahid, and I am passionate about creating engaging and dynamic web applications. I enjoy transforming ideas into beautiful, functional websites that provide a great user experience. This website serves as a living portfolio of my work.
                 </p>
             </div>
@@ -158,12 +155,12 @@
 
         <!-- About Website Section -->
         <section id="about-website" class="w-full max-w-4xl hidden-section flex-col space-y-10 min-h-screen">
-            <div class="p-8 w-full flex flex-col items-start text-left">
-                <div class="w-32 h-32 md:w-40 md:h-40 rounded-full flex items-center justify-center mb-6 shadow-xl glitter-logo">
-                    <h1 class="silver-lines-logo text-shadow-lg z-10">IZ</h1>
+            <div class="p-4 md:p-8 w-full flex flex-col items-start text-left">
+                <div class="w-24 h-24 md:w-32 md:h-32 rounded-full flex items-center justify-center mb-4 md:mb-6 shadow-xl glitter-logo">
+                    <h1 class="silver-lines-logo text-shadow-lg z-10 text-4xl md:text-5xl">IZ</h1>
                 </div>
-                <h2 class="text-4xl font-bold mb-4 text-white text-shadow-lg animate-on-show text-3xl sm:text-4xl lg:text-5xl">About this Website</h2>
-                <p class="text-xl text-white text-shadow-lg animate-on-show text-base sm:text-lg lg:text-xl">
+                <h2 class="text-3xl md:text-4xl font-bold mb-2 md:mb-4 text-white text-shadow-lg animate-on-show">About this Website</h2>
+                <p class="text-base md:text-xl text-white text-shadow-lg animate-on-show">
                     This website is a single HTML file that uses modern web technologies to create a dynamic, multi-page experience. It is built with Tailwind CSS for rapid and responsive styling, ensuring it looks great on any device, from mobile to desktop.
                 </p>
             </div>
@@ -171,17 +168,17 @@
 
         <!-- Gallery Section -->
         <section id="gallery" class="w-full max-w-4xl hidden-section flex-col space-y-10 min-h-screen">
-            <div class="p-8 w-full flex flex-col items-start text-left">
-                <div class="w-32 h-32 md:w-40 md:h-40 rounded-full flex items-center justify-center mb-6 shadow-xl glitter-logo">
-                    <h1 class="silver-lines-logo text-shadow-lg z-10">IZ</h1>
+            <div class="p-4 md:p-8 w-full flex flex-col items-start text-left">
+                <div class="w-24 h-24 md:w-32 md:h-32 rounded-full flex items-center justify-center mb-4 md:mb-6 shadow-xl glitter-logo">
+                    <h1 class="silver-lines-logo text-shadow-lg z-10 text-4xl md:text-5xl">IZ</h1>
                 </div>
-                <h2 class="text-4xl font-bold mb-4 text-white text-shadow-lg animate-on-show text-3xl sm:text-4xl lg:text-5xl">Image Gallery</h2>
-                <p class="text-xl text-white text-shadow-lg mb-4 animate-on-show text-base sm:text-lg lg:text-xl">
+                <h2 class="text-3xl md:text-4xl font-bold mb-2 text-white text-shadow-lg animate-on-show">Image Gallery</h2>
+                <p class="text-base md:text-xl text-white text-shadow-lg mb-4 animate-on-show">
                     Here you can find a collection of my favorite images from my projects.
                 </p>
-                <div class="flex items-center space-x-4 mb-8 w-full max-w-md">
-                    <input type="url" id="image-url-input" placeholder="Paste image URL here..." class="flex-grow p-2 rounded-lg bg-gray-800 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500">
-                    <button id="add-image-btn" class="py-2 px-4 bg-blue-600 rounded-lg font-bold hover:bg-blue-500 transition-colors">Add Image</button>
+                <div class="flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-4 mb-8 w-full max-w-md">
+                    <input type="url" id="image-url-input" placeholder="Paste image URL here..." class="flex-grow p-2 rounded-lg bg-gray-800 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 w-full sm:w-auto">
+                    <button id="add-image-btn" class="py-2 px-4 bg-blue-600 rounded-lg font-bold hover:bg-blue-500 transition-colors w-full sm:w-auto">Add Image</button>
                 </div>
                 <div id="image-gallery-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
                     <!-- 
@@ -195,12 +192,12 @@
 
         <!-- Contact & Social Section -->
         <section id="contact" class="w-full max-w-4xl hidden-section flex-col space-y-10 min-h-screen">
-            <div class="p-8 w-full flex flex-col items-start text-left">
-                <div class="w-32 h-32 md:w-40 md:h-40 rounded-full flex items-center justify-center mb-6 shadow-xl glitter-logo">
-                    <h1 class="silver-lines-logo text-shadow-lg z-10">IZ</h1>
+            <div class="p-4 md:p-8 w-full flex flex-col items-start text-left">
+                <div class="w-24 h-24 md:w-32 md:h-32 rounded-full flex items-center justify-center mb-4 md:mb-6 shadow-xl glitter-logo">
+                    <h1 class="silver-lines-logo text-shadow-lg z-10 text-4xl md:text-5xl">IZ</h1>
                 </div>
-                <h2 class="text-4xl font-bold mb-4 text-white text-shadow-lg animate-on-show text-3xl sm:text-4xl lg:text-5xl">Contact & Social</h2>
-                <p class="text-xl text-white text-shadow-lg animate-on-show text-base sm:text-lg lg:text-xl">
+                <h2 class="text-3xl md:text-4xl font-bold mb-2 text-white text-shadow-lg animate-on-show">Contact & Social</h2>
+                <p class="text-base md:text-xl text-white text-shadow-lg animate-on-show">
                     You can reach me via email at: <a href="mailto:ishratzahid2345@gmail.com" class="text-blue-400 hover:text-blue-200 transition-colors">ishratzahid2345@gmail.com</a>
                 </p>
                 <div class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-8 mt-4">
