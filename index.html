@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Professional Website</title>
+    <!-- Use Tailwind CSS for dynamic styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-image: url('https://images.pexels.com/photos/2085998/pexels-photo-2085998.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-color: #1a202c; /* Fallback color */
+        }
+        .text-shadow-lg {
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
+        }
+        .hidden-section {
+            display: none;
+            opacity: 0;
+        }
+        .visible-section {
+            display: flex;
+            opacity: 1;
+            transition: opacity 0.5s ease-in-out;
+        }
+        .content-card {
+            background-color: rgba(30, 41, 59, 0.8); /* Slate-800 with transparency */
+        }
+        /* Animation for the text */
+        @keyframes fadeInMoveUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .animate-on-show {
+            animation: fadeInMoveUp 0.8s ease-in-out;
+        }
+        /* --- Logo Animations --- */
+        .glitter-logo {
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, #1f2937 0%, #4b5563 100%);
+        }
+        .glitter-logo::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.9) 1px, transparent 1px);
+            background-size: 15px 15px;
+            animation: twinkle 5s linear infinite;
+        }
+        @keyframes twinkle {
+            0% { background-position: 0 0; opacity: 0.8; }
+            100% { background-position: 100% 100%; opacity: 0.5; }
+        }
+        .nav-logo-gradient {
+            background: linear-gradient(to right, #6b7280, #1f2937);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        /* Silver lines effect for the logo */
+        .silver-lines-logo {
+            font-family: 'Inter', sans-serif;
+            font-weight: bold;
+            font-size: 6rem;
+            background: linear-gradient(45deg, #E5E7EB, #A8A8A8, #E5E7EB);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        /* Custom styles for the mobile menu */
+        .side-menu {
+            transform: translateX(-100%);
+            transition: transform 0.3s ease-in-out;
+        }
+        .side-menu-open {
+            transform: translateX(0);
+        }
+        /* Flip animation for menu icon */
+        .menu-icon-flip {
+            transform: rotateY(180deg);
+            transition: transform 0.3s ease-in-out;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white min-h-screen flex flex-col md:flex-row p-4 relative">
+
+    <!-- Mobile Menu Button -->
+    <button id="mobile-menu-btn" class="md:hidden fixed top-4 left-4 z-50 p-2 rounded-lg bg-gray-800 text-white shadow-lg">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+    </button>
+
+    <!-- Sidebar Navigation -->
+    <aside id="side-menu" class="fixed top-0 left-0 h-full w-48 bg-gray-900 bg-opacity-90 p-4 flex-col items-center space-y-4 rounded-r-2xl shadow-2xl z-40 hidden md:flex md:relative md:bg-opacity-70">
+        <button id="close-menu-btn" class="absolute top-4 right-4 md:hidden text-white hover:text-gray-400">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+        </button>
+        <div class="mt-8 mb-8">
+            <h1 class="text-4xl font-extrabold nav-logo-gradient text-shadow-lg">IZ</h1>
+        </div>
+        <nav class="flex flex-col space-y-4 w-full">
+            <button class="nav-link w-full text-center py-2 px-4 rounded-lg bg-gray-700 hover:bg-gray-600 transition-colors text-lg" data-target="home">Home</button>
+            <button class="nav-link w-full text-center py-2 px-4 rounded-lg bg-gray-700 hover:bg-gray-600 transition-colors text-lg" data-target="about">About Me</button>
+            <button class="nav-link w-full text-center py-2 px-4 rounded-lg bg-gray-700 hover:bg-gray-600 transition-colors text-lg" data-target="about-website">About Website</button>
+            <button class="nav-link w-full text-center py-2 px-4 rounded-lg bg-gray-700 hover:bg-gray-600 transition-colors text-lg" data-target="gallery">Gallery</button>
+            <button class="nav-link w-full text-center py-2 px-4 rounded-lg bg-gray-700 hover:bg-gray-600 transition-colors text-lg" data-target="contact">Contact & Social</button>
+        </nav>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="w-full p-8 flex flex-col">
+
+        <!-- Home Section -->
+        <section id="home" class="w-full max-w-4xl flex-col space-y-10 min-h-screen">
+            <div class="p-8 w-full flex flex-col items-start text-left">
+                <div class="w-32 h-32 md:w-40 md:h-40 rounded-full flex items-center justify-center mb-6 shadow-xl glitter-logo">
+                    <h1 class="silver-lines-logo text-shadow-lg z-10">IZ</h1>
+                </div>
+                <h1 class="text-4xl md:text-5xl font-extrabold text-white text-shadow-lg animate-on-show text-3xl sm:text-4xl lg:text-5xl">Welcome to My Website!</h1>
+                <p class="text-xl text-gray-300 mt-4 max-w-prose text-shadow-lg animate-on-show text-base sm:text-lg lg:text-xl">
+                    This is a dynamic and modern website designed to showcase my skills and projects. Explore the different sections to learn more about me.
+                </p>
+            </div>
+        </section>
+        
+        <!-- About Me Section -->
+        <section id="about" class="w-full max-w-4xl hidden-section flex-col justify-center space-y-10 min-h-screen rounded-2xl shadow-2xl">
+            <div class="p-8 w-full flex flex-col items-start text-left">
+                <div class="w-32 h-32 md:w-40 md:h-40 rounded-full flex items-center justify-center mb-6 shadow-xl glitter-logo">
+                    <h1 class="silver-lines-logo text-shadow-lg z-10">IZ</h1>
+                </div>
+                <h2 class="text-4xl font-bold mb-4 text-white text-shadow-lg animate-on-show text-3xl sm:text-4xl lg:text-5xl">About Me</h2>
+                <p class="text-xl text-white text-shadow-lg animate-on-show text-base sm:text-lg lg:text-xl">
+                    Hello and welcome! My name is Ishrat Zahid, and I am passionate about creating engaging and dynamic web applications. I enjoy transforming ideas into beautiful, functional websites that provide a great user experience. This website serves as a living portfolio of my work.
+                </p>
+            </div>
+        </section>
+
+        <!-- About Website Section -->
+        <section id="about-website" class="w-full max-w-4xl hidden-section flex-col justify-center space-y-10 min-h-screen rounded-2xl shadow-2xl">
+            <div class="p-8 w-full flex flex-col items-start text-left">
+                <div class="w-32 h-32 md:w-40 md:h-40 rounded-full flex items-center justify-center mb-6 shadow-xl glitter-logo">
+                    <h1 class="silver-lines-logo text-shadow-lg z-10">IZ</h1>
+                </div>
+                <h2 class="text-4xl font-bold mb-4 text-white text-shadow-lg animate-on-show text-3xl sm:text-4xl lg:text-5xl">About this Website</h2>
+                <p class="text-xl text-white text-shadow-lg animate-on-show text-base sm:text-lg lg:text-xl">
+                    This website is a single HTML file that uses modern web technologies to create a dynamic, multi-page experience. It is built with Tailwind CSS for rapid and responsive styling, ensuring it looks great on any device, from mobile to desktop.
+                </p>
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section id="gallery" class="w-full max-w-4xl hidden-section flex-col items-center min-h-screen rounded-2xl shadow-2xl">
+            <div class="p-8 w-full flex flex-col items-start text-left">
+                <div class="w-32 h-32 md:w-40 md:h-40 rounded-full flex items-center justify-center mb-6 shadow-xl glitter-logo">
+                    <h1 class="silver-lines-logo text-shadow-lg z-10">IZ</h1>
+                </div>
+                <h2 class="text-4xl font-bold mb-4 text-white text-shadow-lg animate-on-show text-3xl sm:text-4xl lg:text-5xl">Image Gallery</h2>
+                <p class="text-xl text-white text-shadow-lg mb-4 animate-on-show text-base sm:text-lg lg:text-xl">
+                    Here you can find a collection of my favorite images from my projects.
+                </p>
+                <div class="flex items-center space-x-4 mb-8 w-full max-w-md">
+                    <input type="url" id="image-url-input" placeholder="Paste image URL here..." class="flex-grow p-2 rounded-lg bg-gray-800 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    <button id="add-image-btn" class="py-2 px-4 bg-blue-600 rounded-lg font-bold hover:bg-blue-500 transition-colors">Add Image</button>
+                </div>
+                <div id="image-gallery-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                    <!-- 
+                    To make an image permanent on this page, add a new <img> tag below 
+                    with the image URL you want to use in the `src` attribute.
+                    Example: <img src="https://images.pexels.com/photos/123/image.jpeg" alt="A beautiful photo" class="rounded-lg shadow-lg">
+                    -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact & Social Section -->
+        <section id="contact" class="w-full max-w-4xl hidden-section flex-col justify-center space-y-10 min-h-screen rounded-2xl shadow-2xl">
+            <div class="p-8 w-full flex flex-col items-start text-left">
+                <div class="w-32 h-32 md:w-40 md:h-40 rounded-full flex items-center justify-center mb-6 shadow-xl glitter-logo">
+                    <h1 class="silver-lines-logo text-shadow-lg z-10">IZ</h1>
+                </div>
+                <h2 class="text-4xl font-bold mb-4 text-white text-shadow-lg animate-on-show text-3xl sm:text-4xl lg:text-5xl">Contact & Social</h2>
+                <p class="text-xl text-white text-shadow-lg animate-on-show text-base sm:text-lg lg:text-xl">
+                    You can reach me via email at: <a href="mailto:ishratzahid2345@gmail.com" class="text-blue-400 hover:text-blue-200 transition-colors">ishratzahid2345@gmail.com</a>
+                </p>
+                <div class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-8 mt-4">
+                    <a href="#" target="_blank" class="text-white hover:text-blue-400 transition-colors">
+                        <span class="text-lg md:text-xl">LinkedIn</span>
+                    </a>
+                    <a href="#" target="_blank" class="text-white hover:text-blue-400 transition-colors">
+                        <span class="text-lg md:text-xl">Twitter</span>
+                    </a>
+                    <a href="#" target="_blank" class="text-white hover:text-blue-400 transition-colors">
+                        <span class="text-lg md:text-xl">GitHub</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const sections = document.querySelectorAll('main section');
+            const navLinks = document.querySelectorAll('.nav-link');
+            const imageUrlInput = document.getElementById('image-url-input');
+            const addImageBtn = document.getElementById('add-image-btn');
+            const imageGalleryGrid = document.getElementById('image-gallery-grid');
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const sideMenu = document.getElementById('side-menu');
+            const closeMenuBtn = document.getElementById('close-menu-btn');
+
+            // Set the initial visible section
+            showSection('home');
+
+            // Function to show a specific section with a fade-in effect
+            function showSection(targetId) {
+                sections.forEach(section => {
+                    if (section.id === targetId) {
+                        section.classList.remove('hidden-section');
+                        section.classList.add('visible-section');
+                    } else {
+                        section.classList.remove('visible-section');
+                        section.classList.add('hidden-section');
+                    }
+                });
+            }
+
+            // Add click listeners to navigation links
+            navLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    const targetId = e.target.getAttribute('data-target');
+                    showSection(targetId);
+                    if (window.innerWidth < 768) {
+                        sideMenu.classList.remove('side-menu-open');
+                        mobileMenuBtn.classList.remove('menu-icon-flip');
+                    }
+                });
+            });
+
+            // Add image to gallery
+            addImageBtn.addEventListener('click', () => {
+                const imageUrl = imageUrlInput.value.trim();
+                if (imageUrl) {
+                    const newImg = document.createElement('img');
+                    newImg.src = imageUrl;
+                    newImg.alt = "User uploaded image";
+                    newImg.classList.add('rounded-lg', 'shadow-lg');
+                    newImg.onerror = () => {
+                        console.error('Failed to load image from URL:', imageUrl);
+                        newImg.src = 'https://placehold.co/400x300/1e293b/fff?text=Invalid+Image';
+                        newImg.alt = "Invalid image URL";
+                    };
+                    imageGalleryGrid.appendChild(newImg);
+                    imageUrlInput.value = ''; // Clear the input field
+                }
+            });
+
+            // Toggle mobile menu
+            mobileMenuBtn.addEventListener('click', () => {
+                sideMenu.classList.toggle('side-menu-open');
+                mobileMenuBtn.classList.toggle('menu-icon-flip');
+            });
+            
+            // Close mobile menu
+            closeMenuBtn.addEventListener('click', () => {
+                sideMenu.classList.remove('side-menu-open');
+                mobileMenuBtn.classList.remove('menu-icon-flip');
+            });
+
+            // Close menu when clicking outside
+            document.addEventListener('click', (e) => {
+                if (!sideMenu.contains(e.target) && !mobileMenuBtn.contains(e.target) && sideMenu.classList.contains('side-menu-open')) {
+                    sideMenu.classList.remove('side-menu-open');
+                    mobileMenuBtn.classList.remove('menu-icon-flip');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
